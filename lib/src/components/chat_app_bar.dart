@@ -6,9 +6,6 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height = 100;
   @override
   Widget build(BuildContext context) {
-    final TextStyle textHeading = TextStyle(
-        color: Palette.primaryTextColor,
-        fontSize: 20); // Text style for the name
     final TextStyle textStyle = TextStyle(
         color: Palette.secondaryTextColor); // Text style for everything else
     final double width =
@@ -33,35 +30,6 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
                           child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          Container(
-                              height: 70 - (width * .06),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Expanded(
-                                      flex: 2,
-                                      child: Center(
-                                          child: Icon(
-                                        Icons.attach_file,
-                                        color: Palette.secondaryColor,
-                                      ))),
-                                  Expanded(
-                                      flex: 6,
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: <Widget>[
-                                          Text('Aditya Gurjar',
-                                              style: textHeading),
-                                          Text('@adityagurjar',
-                                              style: textStyle)
-                                        ],
-                                      )),
-                                ],
-                              )),
                           //second row containing the buttons for media
                           Container(
                               height: 23,
