@@ -47,8 +47,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
                                       ))),
                                   Expanded(
                                       flex: 6,
-                                      child: Container(
-                                          child: Column(
+                                      child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         mainAxisAlignment:
@@ -60,7 +59,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
                                           Text('@adityagurjar',
                                               style: textStyle)
                                         ],
-                                      ))),
+                                      )),
                                 ],
                               )),
                           //second row containing the buttons for media
