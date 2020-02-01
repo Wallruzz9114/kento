@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'Palette.dart';
+import 'package:kento/src/config/palette.dart';
 
 mixin Styles {
   static TextStyle textHeading = TextStyle(
