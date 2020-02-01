@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kento/src/components/chat_list.dart';
-import 'package:kento/src/screens/chat_list_screen.dart';
+import 'package:kento/src/screens/chat_slide_screen.dart';
 
 void main() {
-  final MaterialApp app = MaterialApp(
-    home: Scaffold(body: ChatListScreen()),
+  const MaterialApp app = MaterialApp(
+    home: Scaffold(body: ChatSlideScreen()),
   );
 
   testWidgets('ConversationPageList UI Test', (WidgetTester tester) async {

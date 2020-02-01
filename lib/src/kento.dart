@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kento/src/screens/chat_list_screen.dart';
+import 'package:kento/src/screens/chat_slide_screen.dart';
 
 class Kento extends StatelessWidget {
   // This widget is the root of your application.
@@ -11,6 +11,6 @@ class Kento extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: ChatListScreen());
+        home: const ChatSlideScreen());
   }
 }

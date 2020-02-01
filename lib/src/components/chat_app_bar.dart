@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:kento/src/config/assets.dart';
 import 'package:kento/src/config/palette.dart';
+import 'package:kento/src/config/styles.dart';
 
 class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height = 100;
   @override
   Widget build(BuildContext context) {
-    final TextStyle textStyle = TextStyle(
-        color: Palette.secondaryTextColor); // Text style for everything else
+    // Text style for everything else
     final double width =
         MediaQuery.of(context).size.width; // calculate the screen width
 
@@ -15,10 +15,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Container(
             decoration: BoxDecoration(boxShadow: <BoxShadow>[
               //adds a shadow to the appbar
-              BoxShadow(
-                color: Colors.black,
-                blurRadius: 5.0,
-              )
+              BoxShadow(color: Colors.grey, blurRadius: 2.0, spreadRadius: 0.1)
             ]),
             child: Container(
                 color: Palette.primaryBackgroundColor,
@@ -40,7 +37,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
                                 children: <Widget>[
                                   Text(
                                     'Photos',
-                                    style: textStyle,
+                                    style: Styles.text,
                                   ),
                                   VerticalDivider(
                                     width: 30,
@@ -48,13 +45,13 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
                                   ),
                                   Text(
                                     'Videos',
-                                    style: textStyle,
+                                    style: Styles.text,
                                   ),
                                   VerticalDivider(
                                     width: 30,
                                     color: Palette.primaryTextColor,
                                   ),
-                                  Text('Files', style: textStyle)
+                                  Text('Files', style: Styles.text)
                                 ],
                               )),
                         ],
