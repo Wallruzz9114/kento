@@ -18,10 +18,24 @@ class _ChatBottomSheetState extends State<ChatBottomSheet> {
         child: Scaffold(
             backgroundColor: Colors.white,
             body: ListView(children: <Widget>[
-              NavigationPill(),
-              Center(child: Text('Messages', style: Styles.textHeading)),
-              const SizedBox(
-                height: 20,
+              GestureDetector(
+                child: ListView(
+                    shrinkWrap: true,
+                    physics: const ClampingScrollPhysics(),
+                    children: <Widget>[
+                      NavigationPill(),
+                      Center(
+                          child: Text('Messages', style: Styles.textHeading)),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ]),
+                onVerticalDragEnd: (DragEndDetails details) {
+                  print('Dragged Down');
+                  if (details.primaryVelocity > 50) {
+                    Navigator.pop(context);
+                  }
+                },
               ),
               ListView.separated(
                 shrinkWrap: true,
