@@ -12,9 +12,10 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   @override
-  Widget build(BuildContext context) {
+  Column build(BuildContext context) {
     return Column(children: <Widget>[
-      Expanded(flex: 2, child: ChatAppBar()), // Custom app bar for chat screen
+      const Expanded(
+          flex: 2, child: ChatAppBar()), // Custom app bar for chat screen
       Expanded(
           flex: 11,
           child: Container(

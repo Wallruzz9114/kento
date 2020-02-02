@@ -5,7 +5,7 @@ import 'package:kento/src/config/styles.dart';
 
 class ChatRow extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Container build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.fromLTRB(15, 5, 0, 5),
         child: Row(

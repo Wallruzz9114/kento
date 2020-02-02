@@ -9,9 +9,9 @@ class ChatItem extends StatelessWidget {
   final int index;
 
   @override
-  Widget build(BuildContext context) {
+  Container build(BuildContext context) {
     if (index % 2 == 0) {
-      //This is the sent message. We'll later use data from firebase instead of index to determine the message is sent or received.
+      // This is the sent message. We'll later use data from firebase instead of index to determine the message is sent or received.
       return Container(
           child: Column(children: <Widget>[
         Row(

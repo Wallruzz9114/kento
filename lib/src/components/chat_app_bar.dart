@@ -4,13 +4,12 @@ import 'package:kento/src/config/palette.dart';
 import 'package:kento/src/config/styles.dart';
 
 class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final double height = 100;
-  @override
-  Widget build(BuildContext context) {
-    // Text style for everything else
-    final double width =
-        MediaQuery.of(context).size.width; // calculate the screen width
+  const ChatAppBar();
 
+  double get height => 100.0;
+
+  @override
+  Material build(BuildContext context) {
     return Material(
         child: Container(
             decoration: BoxDecoration(boxShadow: <BoxShadow>[
@@ -18,6 +17,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
               BoxShadow(color: Colors.grey, blurRadius: 2.0, spreadRadius: 0.1)
             ]),
             child: Container(
+                padding: const EdgeInsets.only(top: 10, bottom: 10),
                 color: Palette.primaryBackgroundColor,
                 child: Row(children: <Widget>[
                   Expanded(
@@ -27,33 +27,69 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
                           child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          //second row containing the buttons for media
-                          Container(
-                              height: 23,
-                              padding: const EdgeInsets.fromLTRB(20, 5, 5, 0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                          Expanded(
+                              flex: 7,
+                              child: Container(
+                                  child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Text(
-                                    'Photos',
-                                    style: Styles.text,
-                                  ),
-                                  VerticalDivider(
-                                    width: 30,
-                                    color: Palette.primaryTextColor,
-                                  ),
-                                  Text(
-                                    'Videos',
-                                    style: Styles.text,
-                                  ),
-                                  VerticalDivider(
-                                    width: 30,
-                                    color: Palette.primaryTextColor,
-                                  ),
-                                  Text('Files', style: Styles.text)
+                                  Expanded(
+                                      flex: 2,
+                                      child: Center(
+                                          child: IconButton(
+                                              icon: Icon(
+                                                Icons.attach_file,
+                                                color: Palette.secondaryColor,
+                                              ),
+                                              onPressed: () {}))),
+                                  Expanded(
+                                      flex: 6,
+                                      child: Container(
+                                          child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          Text('Aditya Gurjar',
+                                              style: Styles.textHeading),
+                                          Text('@adityagurjar',
+                                              style: Styles.text)
+                                        ],
+                                      ))),
                                 ],
-                              )),
+                              ))),
+                          //second row containing the buttons for media
+                          Expanded(
+                              flex: 3,
+                              child: Container(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(20, 5, 5, 0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      Text(
+                                        'Photos',
+                                        style: Styles.text,
+                                      ),
+                                      VerticalDivider(
+                                        width: 30,
+                                        color: Palette.primaryTextColor,
+                                      ),
+                                      Text(
+                                        'Videos',
+                                        style: Styles.text,
+                                      ),
+                                      VerticalDivider(
+                                        width: 30,
+                                        color: Palette.primaryTextColor,
+                                      ),
+                                      Text('Files', style: Styles.text)
+                                    ],
+                                  ))),
                         ],
                       ))),
                   //This is the display picture
@@ -62,7 +98,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
                       child: Container(
                           child: Center(
                               child: CircleAvatar(
-                        radius: (80 - (width * .06)) / 2,
+                        radius: 30,
                         backgroundImage: Image.asset(
                           Assets.user,
                         ).image,

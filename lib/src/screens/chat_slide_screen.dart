@@ -25,7 +25,7 @@ class _ChatSlideScreenState extends State<ChatSlideScreen>
   }
 
   @override
-  Widget build(BuildContext context) {
+  SafeArea build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
             key: _scaffoldKey,

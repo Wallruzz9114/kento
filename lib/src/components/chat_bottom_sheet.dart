@@ -13,7 +13,7 @@ class ChatBottomSheet extends StatefulWidget {
 
 class _ChatBottomSheetState extends State<ChatBottomSheet> {
   @override
-  Widget build(BuildContext context) {
+  Material build(BuildContext context) {
     return Material(
         child: Scaffold(
             backgroundColor: Colors.white,

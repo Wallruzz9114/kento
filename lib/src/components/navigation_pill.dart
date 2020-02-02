@@ -3,7 +3,7 @@ import 'package:kento/src/config/palette.dart';
 
 class NavigationPill extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Container build(BuildContext context) {
     return Container(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
