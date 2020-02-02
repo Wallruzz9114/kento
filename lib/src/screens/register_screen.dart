@@ -154,9 +154,8 @@ class _RegisterScreenState extends State<RegisterScreen>
               margin: const EdgeInsets.only(top: 100),
               child: ButtonTheme(
                   height: 40,
-                  child: RaisedButton.icon(
+                  child: FlatButton.icon(
                       onPressed: () => updatePageState(1),
-                      elevation: 0,
                       color: Colors.transparent,
                       icon: Image.asset(
                         Assets.google_button,
@@ -269,7 +268,7 @@ class _RegisterScreenState extends State<RegisterScreen>
   void updatePageState(int index) {
     if (index == 1)
       pageController.nextPage(
-          duration: const Duration(milliseconds: 300), curve: Curves.linear);
+          duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
 
     setState(() {
       currentPage = index;
@@ -281,7 +280,7 @@ class _RegisterScreenState extends State<RegisterScreen>
       //go to first page if currently on second page
       pageController.previousPage(
         duration: const Duration(milliseconds: 300),
-        curve: Curves.linear,
+        curve: Curves.easeOut,
       );
       return Future<bool>.value(false);
     }
